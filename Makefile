@@ -1,5 +1,10 @@
 SRC_DIR=./src
 BUILD_DIR=./build
+BIN_DIR=/usr/bin
+
+install:
+	cp $(BUILD_DIR)/cmount $(BIN_DIR)
+	cp $(BUILD_DIR)/ucmount $(BIN_DIR)
 
 all:
 	mkdir -p $(BUILD_DIR)
