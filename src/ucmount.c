@@ -3,7 +3,16 @@
 #include <string.h>
 #include <unistd.h>
 
+void usage() {
+	printf("usage: ucmount <name>\n");
+}
+
 int main(int argc, char **argv) {
+	if (argc != 2) {
+		usage();
+		return 1;
+	}
+
 	char *prefix = "umount -l /mnt/";
 	int size = strlen(prefix) + strlen(argv[1]) + 1;
 	char *command = calloc(size, 1);

@@ -2,8 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+
+void usage() {
+	printf("usage: cmount <file> [name]\n");
+}
+
 int main(int argc, char **argv) {
 	const char *name = argv[1];
+
+	if (argc == 1) {
+		usage();
+		return 1;
+	}
+
 	if (argc > 2) {
 		name = argv[2];
 	}
